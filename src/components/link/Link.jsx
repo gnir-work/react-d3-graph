@@ -98,6 +98,17 @@ export default class Link extends React.Component {
 
         return (
             <g>
+                {this.props.clickableStrokeWidth > lineProps.style.strokeWidth && (
+                    <path
+                        {...lineProps}
+                        id={"${id}-clickable"}
+                        style={{
+                            ...lineProps.style,
+                            strokeWidth: this.props.clickableStrokeWidth,
+                            stroke: "transparent",
+                        }}
+                    />
+                )}
                 <path {...lineProps} id={id} />
                 {label && (
                     <text style={{ textAnchor: "middle" }} {...textProps}>
