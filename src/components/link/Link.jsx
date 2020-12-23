@@ -102,6 +102,7 @@ export default class Link extends React.Component {
                     <path
                         {...lineProps}
                         id={"${id}-clickable"}
+                        markerMid=""
                         style={{
                             ...lineProps.style,
                             strokeWidth: this.props.clickableStrokeWidth,
