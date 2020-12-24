@@ -100,6 +100,8 @@ function buildLinkProps(link, nodes, links, config, linkCallbacks, highlightedNo
         strokeWidth += (linkValue * strokeWidth) / 10;
     }
 
+    let clickableStrokeWidth = strokeWidth * (config.link.clickableStrokeWidthMultiplier || 1);
+
     const markerId = config.directed ? getMarkerId(highlight, transform, config) : null;
 
     const t = 1 / transform;
@@ -134,6 +136,7 @@ function buildLinkProps(link, nodes, links, config, linkCallbacks, highlightedNo
         source,
         stroke,
         strokeWidth,
+        clickableStrokeWidth,
         target,
         onClickLink: linkCallbacks.onClickLink,
         onMouseOutLink: linkCallbacks.onMouseOutLink,
@@ -156,8 +159,8 @@ function buildLinkProps(link, nodes, links, config, linkCallbacks, highlightedNo
 function buildNodeProps(node, config, nodeCallbacks = {}, highlightedNode, highlightedLink, transform) {
     const highlight =
         node.highlighted ||
-        (node.id === (highlightedLink && highlightedLink.source) ||
-            node.id === (highlightedLink && highlightedLink.target));
+        node.id === (highlightedLink && highlightedLink.source) ||
+            node.id === (highlightedLink && highlightedLink.target);
     const opacity = _getNodeOpacity(node, highlightedNode, highlightedLink, config);
 
     let fill = node.color || config.node.color;
