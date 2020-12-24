@@ -98,7 +98,8 @@ export default class Sandbox extends React.Component {
 
     onNodePositionChange = (nodeId, x, y, draggedNodes) =>
         console.info(
-            `Node ${nodeId} is moved to new position. New position is (${x}, ${y}) (x,y). also they were dragged along ${draggedNodes}`
+            `Node ${nodeId} is moved to new position. New position is (${x}, ${y}) (x,y).
+		also they were dragged along ${draggedNodes}`
         );
 
     /**

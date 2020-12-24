@@ -16,7 +16,6 @@ import {
     checkForGraphElementsChanges,
     getCenterAndZoomTransformation,
     initializeGraphState,
-    getNodesGroup,
 } from "./graph.helper";
 import { renderGraph } from "./graph.renderer";
 import { merge, throwErr } from "../../utils";
