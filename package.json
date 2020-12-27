@@ -1,11 +1,11 @@
 {
   "name": "react-d3-graph-extended",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "An extensions of Daniel Caldas awesome react-d3-graph",
   "author": "Daniel Caldas & Nir Geller",
   "license": "MIT",
   "scripts": {
-    "check": "npm run docs:lint && npm run lint && npm run test && npm run functional",
+    "check": "npm run docs:lint && npm run lint ",
     "check:light": "npm run lint && npm run test",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development --content-base sandbox --config webpack.config.js --inline --hot --port 3002",
     "dist:rd3g": "rm -rf dist/ && webpack --config webpack.config.dist.js -p --display-modules --optimize-minimize",
